@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#F3E8D8" />
+  <meta name="description" content="Le Choix Costaud — des objets pratiques, solides et sélectionnés pour durer dans la vraie vie." />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Choix Costaud" />
+  <title>Le Choix Costaud</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icons/icon-192.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="icons/icon-192.svg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <button class="brand" data-view="home" aria-label="Retour à l'accueil">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" role="img">
+            <path d="M32 5 53 13v17c0 13.5-8.2 23.8-21 29C19.2 53.8 11 43.5 11 30V13L32 5Z"/>
+            <path class="brand-box" d="M21 24h22v17H21z"/>
+            <path class="brand-line" d="M21 29h22M32 24v17"/>
+          </svg>
+        </span>
+        <span class="brand-copy">
+          <strong>Le Choix Costaud</strong>
+          <small>Des objets utiles qui tiennent vraiment</small>
+        </span>
+      </button>
+
+      <button class="icon-button" id="installBtn" hidden aria-label="Installer l'application">
+        <span aria-hidden="true">↓</span>
+      </button>
+    </header>
+
+    <main>
+      <section class="view active" id="view-home">
+        <div class="hero">
+          <div class="hero-badge">Sélection indépendante</div>
+          <h1>Marre des objets qui cassent trop vite&nbsp;?</h1>
+          <p>Découvrez des objets pratiques, résistants et faciles à vivre pour la maison, la voiture et les voyages.</p>
+          <div class="hero-actions">
+            <button class="primary-button" data-view="explore">Voir les sélections</button>
+            <button class="secondary-button" data-view="quiz">Trouver selon mon besoin</button>
+          </div>
+          <div class="test-note">
+            <span aria-hidden="true">🧪</span>
+            <span>Version de test sans lien rémunéré ni achat intégré.</span>
+          </div>
+        </div>
+
+        <section class="section-block">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">Explorer</span>
+              <h2>Choisissez votre univers</h2>
+            </div>
+          </div>
+          <div class="category-grid" id="homeCategories"></div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">Sélection du moment</span>
+              <h2>Les petits costauds</h2>
+            </div>
+            <button class="text-button" data-view="explore" data-filter="budget">Voir tout</button>
+          </div>
+          <div class="horizontal-list" id="featuredProducts"></div>
+        </section>
+
+        <section class="section-block">
+          <div class="trust-card">
+            <div class="trust-icon">✓</div>
+            <div>
+              <h3>Ce que nous regardons</h3>
+              <p>Matière, capacité, entretien, usage réel et limites connues. Aucun produit n’est présenté comme “incassable” sans preuve.</p>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <section class="view" id="view-explore">
+        <div class="page-head">
+          <div>
+            <span class="eyebrow">Catalogue test</span>
+            <h1>Explorer les produits</h1>
+            <p>Des exemples génériques pour tester l’expérience avant l’ajout de véritables offres.</p>
+          </div>
+        </div>
+
+        <div class="sticky-tools">
+          <label class="search-box">
+            <span aria-hidden="true">⌕</span>
+            <input id="searchInput" type="search" placeholder="Rechercher un usage, une matière..." autocomplete="off" />
+          </label>
+          <div class="filter-row" id="categoryFilters"></div>
+          <div class="filter-row compact" id="tagFilters"></div>
+        </div>
+
+        <div class="result-head">
+          <strong id="resultCount">0 produit</strong>
+          <button class="sort-button" id="resetFilters">Réinitialiser</button>
+        </div>
+
+        <div class="product-grid" id="productGrid"></div>
+      </section>
+
+      <section class="view" id="view-quiz">
+        <div class="page-head">
+          <div>
+            <span class="eyebrow">Assistant de choix</span>
+            <h1>Trouvez le bon produit</h1>
+            <p>Six questions rapides pour obtenir trois suggestions adaptées.</p>
+          </div>
+        </div>
+
+        <div class="quiz-card">
+          <div class="quiz-progress">
+            <div class="quiz-progress-bar" id="quizProgress"></div>
+          </div>
+          <div id="quizContent"></div>
+        </div>
+      </section>
+
+      <section class="view" id="view-favorites">
+        <div class="page-head">
+          <div>
+            <span class="eyebrow">Votre sélection</span>
+            <h1>Favoris</h1>
+            <p>Gardez de côté les produits que vous souhaitez revoir.</p>
+          </div>
+        </div>
+        <div class="empty-state" id="favoritesEmpty">
+          <div>♡</div>
+          <h2>Aucun favori pour le moment</h2>
+          <p>Ajoutez des produits depuis les sélections.</p>
+          <button class="primary-button" data-view="explore">Explorer</button>
+        </div>
+        <div class="product-grid" id="favoritesGrid"></div>
+      </section>
+
+      <section class="view" id="view-compare">
+        <div class="page-head">
+          <div>
+            <span class="eyebrow">Comparateur</span>
+            <h1>Comparer</h1>
+            <p>Sélectionnez jusqu’à trois produits.</p>
+          </div>
+        </div>
+
+        <div class="compare-empty" id="compareEmpty">
+          <div>⇄</div>
+          <h2>Rien à comparer</h2>
+          <p>Utilisez le bouton “Comparer” sur une fiche produit.</p>
+          <button class="primary-button" data-view="explore">Choisir des produits</button>
+        </div>
+
+        <div class="compare-wrap" id="compareWrap"></div>
+      </section>
+
+      <section class="view" id="view-product">
+        <button class="back-button" id="productBack">← Retour</button>
+        <div id="productDetail"></div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Navigation principale">
+      <button class="nav-item active" data-view="home">
+        <span aria-hidden="true">⌂</span>
+        <small>Accueil</small>
+      </button>
+      <button class="nav-item" data-view="explore">
+        <span aria-hidden="true">▦</span>
+        <small>Explorer</small>
+      </button>
+      <button class="nav-item" data-view="quiz">
+        <span aria-hidden="true">◇</span>
+        <small>Trouver</small>
+      </button>
+      <button class="nav-item" data-view="favorites">
+        <span aria-hidden="true">♡</span>
+        <small>Favoris</small>
+      </button>
+      <button class="nav-item" data-view="compare">
+        <span aria-hidden="true">⇄</span>
+        <small>Comparer</small>
+        <span class="nav-count" id="compareCount" hidden>0</span>
+      </button>
+    </nav>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
