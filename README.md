@@ -30,3 +30,13 @@ Avant la monétisation :
 - déclarer clairement les liens affiliés ;
 - vérifier les conditions de chaque programme partenaire ;
 - régulariser le cadre administratif.
+
+
+## Correctif installation
+
+- Le bouton d'installation ne reste plus inactif.
+- Si le prompt natif est disponible, il ouvre l'installation.
+- Sinon, il affiche les étapes manuelles du navigateur.
+- Icônes Android converties en PNG 192 × 192 et 512 × 512.
+- Ajout d'une icône maskable.
+- Cache PWA renouvelé.

@@ -1,12 +1,13 @@
-const CACHE_NAME = "le-choix-costaud-v1";
+const CACHE_NAME = "le-choix-costaud-v1-1";
 const APP_ASSETS = [
   "./",
   "./index.html",
   "./style.css",
   "./app.js",
   "./manifest.json",
-  "./icons/icon-192.svg",
-  "./icons/icon-512.svg"
+  "./icons/icon-192.png",
+  "./icons/icon-512.png",
+  "./icons/maskable-512.png"
 ];
 
 self.addEventListener("install", event => {

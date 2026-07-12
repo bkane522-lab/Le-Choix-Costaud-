@@ -10,8 +10,8 @@
   <meta name="apple-mobile-web-app-title" content="Choix Costaud" />
   <title>Le Choix Costaud</title>
   <link rel="manifest" href="manifest.json" />
-  <link rel="icon" href="icons/icon-192.svg" type="image/svg+xml" />
-  <link rel="apple-touch-icon" href="icons/icon-192.svg" />
+  <link rel="icon" href="icons/icon-192.png" type="image/png" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -31,7 +31,7 @@
         </span>
       </button>
 
-      <button class="icon-button" id="installBtn" hidden aria-label="Installer l'application">
+      <button class="icon-button" id="installBtn" hidden aria-label="Installer l'application" title="Installer l'application">
         <span aria-hidden="true">↓</span>
       </button>
     </header>
@@ -192,6 +192,21 @@
         <span class="nav-count" id="compareCount" hidden>0</span>
       </button>
     </nav>
+  </div>
+
+
+  <div class="install-help" id="installHelp" hidden>
+    <div class="install-help-panel" role="dialog" aria-modal="true" aria-labelledby="installHelpTitle">
+      <button class="install-help-close" id="installHelpClose" aria-label="Fermer">×</button>
+      <div class="install-help-icon">↓</div>
+      <h2 id="installHelpTitle">Installer l’application</h2>
+      <p>Le bouton automatique n’est pas encore disponible dans ce navigateur.</p>
+      <ol>
+        <li>Ouvrez le menu du navigateur.</li>
+        <li>Choisissez <strong>Installer l’application</strong> ou <strong>Ajouter à l’écran d’accueil</strong>.</li>
+      </ol>
+      <button class="primary-button install-help-ok" id="installHelpOk">J’ai compris</button>
+    </div>
   </div>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>

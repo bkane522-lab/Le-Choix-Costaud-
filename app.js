@@ -779,18 +779,85 @@ function bindNavigation() {
 
 let deferredInstallPrompt = null;
 
+const installBtn = $("#installBtn");
+const installHelp = $("#installHelp");
+const installHelpClose = $("#installHelpClose");
+const installHelpOk = $("#installHelpOk");
+
+function isStandaloneMode() {
+  return window.matchMedia("(display-mode: standalone)").matches ||
+    window.navigator.standalone === true;
+}
+
+function openInstallHelp() {
+  installHelp.hidden = false;
+  document.body.style.overflow = "hidden";
+}
+
+function closeInstallHelp() {
+  installHelp.hidden = true;
+  document.body.style.overflow = "";
+}
+
+function refreshInstallButton() {
+  if (isStandaloneMode()) {
+    installBtn.hidden = true;
+    return;
+  }
+
+  // Le bouton apparaît toujours hors mode installé.
+  // Si le prompt natif n'est pas disponible, un guide manuel s'affiche.
+  installBtn.hidden = false;
+}
+
 window.addEventListener("beforeinstallprompt", (event) => {
   event.preventDefault();
   deferredInstallPrompt = event;
-  $("#installBtn").hidden = false;
+  refreshInstallButton();
 });
 
-$("#installBtn").addEventListener("click", async () => {
-  if (!deferredInstallPrompt) return;
-  deferredInstallPrompt.prompt();
-  await deferredInstallPrompt.userChoice;
+window.addEventListener("appinstalled", () => {
   deferredInstallPrompt = null;
-  $("#installBtn").hidden = true;
+  installBtn.hidden = true;
+  showToast("Application installée");
+});
+
+installBtn.addEventListener("click", async () => {
+  if (!deferredInstallPrompt) {
+    openInstallHelp();
+    return;
+  }
+
+  try {
+    deferredInstallPrompt.prompt();
+    const choice = await deferredInstallPrompt.userChoice;
+
+    if (choice.outcome === "accepted") {
+      showToast("Installation lancée");
+      installBtn.hidden = true;
+    } else {
+      showToast("Installation annulée");
+    }
+  } catch (error) {
+    console.error("Échec du prompt d'installation :", error);
+    openInstallHelp();
+  } finally {
+    deferredInstallPrompt = null;
+  }
+});
+
+installHelpClose.addEventListener("click", closeInstallHelp);
+installHelpOk.addEventListener("click", closeInstallHelp);
+installHelp.addEventListener("click", (event) => {
+  if (event.target === installHelp) closeInstallHelp();
+});
+
+window.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && !installHelp.hidden) closeInstallHelp();
+});
+
+window.addEventListener("load", () => {
+  window.setTimeout(refreshInstallButton, 600);
 });
 
 if ("serviceWorker" in navigator) {
