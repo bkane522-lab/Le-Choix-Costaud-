@@ -9,31 +9,22 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="apple-mobile-web-app-title" content="Choix Costaud" />
   <title>Le Choix Costaud</title>
-  <link rel="manifest" href="manifest.json" />
+  <link rel="manifest" href="manifest.json?v=2.1" />
   <link rel="icon" href="icons/icon-192.png" type="image/png" />
   <link rel="apple-touch-icon" href="icons/icon-192.png" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style-v21.css" />
 </head>
 <body>
   <div class="app-shell">
     <header class="topbar">
       <button class="brand" data-view="home" aria-label="Retour à l'accueil">
-        <span class="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 64 64" role="img">
-            <path d="M32 5 53 13v17c0 13.5-8.2 23.8-21 29C19.2 53.8 11 43.5 11 30V13L32 5Z"/>
-            <path class="brand-box" d="M21 24h22v17H21z"/>
-            <path class="brand-line" d="M21 29h22M32 24v17"/>
-          </svg>
-        </span>
+        <img src="icons/icon-192.png" alt="" class="brand-logo" />
         <span class="brand-copy">
           <strong>Le Choix Costaud</strong>
           <small>Des objets utiles qui tiennent vraiment</small>
         </span>
       </button>
-
-      <button class="icon-button" id="installBtn" hidden aria-label="Installer l'application" title="Installer l'application">
-        <span aria-hidden="true">↓</span>
-      </button>
+      <button class="icon-button" id="installBtn" aria-label="Installer l'application" title="Installer l'application">↓</button>
     </header>
 
     <main>
@@ -47,7 +38,7 @@
             <button class="secondary-button" data-view="quiz">Trouver selon mon besoin</button>
           </div>
           <div class="test-note">
-            <span aria-hidden="true">🧪</span>
+            <span aria-hidden="true">◌</span>
             <span>Version de test sans lien rémunéré ni achat intégré.</span>
           </div>
         </div>
@@ -60,6 +51,16 @@
             </div>
           </div>
           <div class="category-grid" id="homeCategories"></div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">Guides pratiques</span>
+              <h2>Sélections éditoriales</h2>
+            </div>
+          </div>
+          <div class="editorial-grid" id="editorialGrid"></div>
         </section>
 
         <section class="section-block">
@@ -78,7 +79,7 @@
             <div class="trust-icon">✓</div>
             <div>
               <h3>Ce que nous regardons</h3>
-              <p>Matière, capacité, entretien, usage réel et limites connues. Aucun produit n’est présenté comme “incassable” sans preuve.</p>
+              <p>Matière, capacité, entretien, usage réel et limites connues. Aucun produit n’est présenté comme « incassable » sans preuve.</p>
             </div>
           </div>
         </section>
@@ -89,10 +90,9 @@
           <div>
             <span class="eyebrow">Catalogue test</span>
             <h1>Explorer les produits</h1>
-            <p>Des exemples génériques pour tester l’expérience avant l’ajout de véritables offres.</p>
+            <p>Des produits de démonstration pour valider l’expérience avant l’ajout des offres marchandes.</p>
           </div>
         </div>
-
         <div class="sticky-tools">
           <label class="search-box">
             <span aria-hidden="true">⌕</span>
@@ -101,28 +101,23 @@
           <div class="filter-row" id="categoryFilters"></div>
           <div class="filter-row compact" id="tagFilters"></div>
         </div>
-
         <div class="result-head">
           <strong id="resultCount">0 produit</strong>
           <button class="sort-button" id="resetFilters">Réinitialiser</button>
         </div>
-
         <div class="product-grid" id="productGrid"></div>
       </section>
 
       <section class="view" id="view-quiz">
-        <div class="page-head">
+        <div class="page-head quiz-page-head">
           <div>
             <span class="eyebrow">Assistant de choix</span>
             <h1>Trouvez le bon produit</h1>
             <p>Six questions rapides pour obtenir trois suggestions adaptées.</p>
           </div>
         </div>
-
         <div class="quiz-card">
-          <div class="quiz-progress">
-            <div class="quiz-progress-bar" id="quizProgress"></div>
-          </div>
+          <div class="quiz-progress"><div class="quiz-progress-bar" id="quizProgress"></div></div>
           <div id="quizContent"></div>
         </div>
       </section>
@@ -136,8 +131,7 @@
           </div>
         </div>
         <div class="empty-state" id="favoritesEmpty">
-          <div>♡</div>
-          <h2>Aucun favori pour le moment</h2>
+          <div>♡</div><h2>Aucun favori pour le moment</h2>
           <p>Ajoutez des produits depuis les sélections.</p>
           <button class="primary-button" data-view="explore">Explorer</button>
         </div>
@@ -152,65 +146,47 @@
             <p>Sélectionnez jusqu’à trois produits.</p>
           </div>
         </div>
-
         <div class="compare-empty" id="compareEmpty">
-          <div>⇄</div>
-          <h2>Rien à comparer</h2>
-          <p>Utilisez le bouton “Comparer” sur une fiche produit.</p>
+          <div>⇄</div><h2>Rien à comparer</h2>
+          <p>Utilisez le bouton « Comparer » sur une fiche produit.</p>
           <button class="primary-button" data-view="explore">Choisir des produits</button>
         </div>
-
         <div class="compare-wrap" id="compareWrap"></div>
       </section>
 
       <section class="view" id="view-product">
-        <button class="back-button" id="productBack">← Retour</button>
+        <div class="product-back-bar">
+          <button class="back-button" id="productBack">← Retour</button>
+        </div>
         <div id="productDetail"></div>
       </section>
     </main>
 
     <nav class="bottom-nav" aria-label="Navigation principale">
-      <button class="nav-item active" data-view="home">
-        <span aria-hidden="true">⌂</span>
-        <small>Accueil</small>
-      </button>
-      <button class="nav-item" data-view="explore">
-        <span aria-hidden="true">▦</span>
-        <small>Explorer</small>
-      </button>
-      <button class="nav-item" data-view="quiz">
-        <span aria-hidden="true">◇</span>
-        <small>Trouver</small>
-      </button>
-      <button class="nav-item" data-view="favorites">
-        <span aria-hidden="true">♡</span>
-        <small>Favoris</small>
-      </button>
-      <button class="nav-item" data-view="compare">
-        <span aria-hidden="true">⇄</span>
-        <small>Comparer</small>
-        <span class="nav-count" id="compareCount" hidden>0</span>
-      </button>
+      <button class="nav-item active" data-view="home"><span>⌂</span><small>Accueil</small></button>
+      <button class="nav-item" data-view="explore"><span>▦</span><small>Explorer</small></button>
+      <button class="nav-item" data-view="quiz"><span>◇</span><small>Trouver</small></button>
+      <button class="nav-item" data-view="favorites"><span>♡</span><small>Favoris</small></button>
+      <button class="nav-item" data-view="compare"><span>⇄</span><small>Comparer</small><span class="nav-count" id="compareCount" hidden>0</span></button>
     </nav>
   </div>
-
 
   <div class="install-help" id="installHelp" hidden>
     <div class="install-help-panel" role="dialog" aria-modal="true" aria-labelledby="installHelpTitle">
       <button class="install-help-close" id="installHelpClose" aria-label="Fermer">×</button>
       <div class="install-help-icon">↓</div>
       <h2 id="installHelpTitle">Installer l’application</h2>
-      <p>Le bouton automatique n’est pas encore disponible dans ce navigateur.</p>
+      <p>Le navigateur n’autorise pas l’ouverture automatique de l’installation.</p>
       <ol>
-        <li>Ouvrez le menu du navigateur.</li>
-        <li>Choisissez <strong>Installer l’application</strong> ou <strong>Ajouter à l’écran d’accueil</strong>.</li>
+        <li>Fermez ce message.</li>
+        <li>Appuyez sur le bouton <strong>menu ≡ en bas à droite</strong>.</li>
+        <li>Choisissez <strong>Installer l’application</strong>, <strong>Ajouter au téléphone</strong> ou <strong>Ajouter à l’écran d’accueil</strong>.</li>
       </ol>
       <button class="primary-button install-help-ok" id="installHelpOk">J’ai compris</button>
     </div>
   </div>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-
-  <script src="app.js" defer></script>
+  <script src="app-v21.js" defer></script>
 </body>
 </html>

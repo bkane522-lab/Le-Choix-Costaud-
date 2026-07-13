@@ -1,0 +1,482 @@
+[
+  {
+    "id": "box-12l",
+    "name": "Boîte empilable 12 L",
+    "category": "maison",
+    "price": 14.9,
+    "material": "Polypropylène",
+    "capacity": "12 litres",
+    "dimensions": "38 × 26 × 18 cm",
+    "cleaning": "Éponge ou rinçage",
+    "use": "Placard, cellier, chambre",
+    "description": "Une boîte simple avec couvercle clipsable pour organiser les petits espaces.",
+    "tags": [
+      "empilable",
+      "moins20",
+      "lavable"
+    ],
+    "badge": "Petit espace",
+    "strengths": [
+      "Format facile à déplacer",
+      "Couvercle clipsable",
+      "Parois lavables"
+    ],
+    "limits": [
+      "Ne pas utiliser pour des charges très lourdes",
+      "Dimensions à vérifier avant achat"
+    ],
+    "why": "Nous l’avons retenue pour son format polyvalent, son entretien facile et son rangement empilable.",
+    "whoFor": [
+      "Petits logements",
+      "Placards et celliers",
+      "Rangement saisonnier"
+    ],
+    "notFor": [
+      "Objets extrêmement lourds",
+      "Stockage extérieur permanent"
+    ],
+    "score": 82,
+    "lastVerified": "12 juillet 2026",
+    "image": "assets/products/box-12l.png"
+  },
+  {
+    "id": "coffre-auto",
+    "name": "Organiseur de coffre pliable",
+    "category": "voiture",
+    "price": 24.9,
+    "material": "Polyester renforcé",
+    "capacity": "3 compartiments",
+    "dimensions": "58 × 38 × 32 cm",
+    "cleaning": "Chiffon humide",
+    "use": "Courses, outils, accessoires auto",
+    "description": "Un organiseur pliable qui évite aux objets de se promener dans le coffre.",
+    "tags": [
+      "pliable",
+      "moins30",
+      "voiture"
+    ],
+    "badge": "Voiture",
+    "strengths": [
+      "Se plie à plat",
+      "Poignées latérales",
+      "Compartiments séparés"
+    ],
+    "limits": [
+      "Pas totalement étanche",
+      "Tenue variable selon le revêtement du coffre"
+    ],
+    "why": "Son intérêt principal est de réunir courses, câbles et accessoires dans un seul rangement transportable.",
+    "whoFor": [
+      "Familles",
+      "Trajets réguliers",
+      "Coffres souvent chargés"
+    ],
+    "notFor": [
+      "Liquides sans protection",
+      "Très petits coffres"
+    ],
+    "score": 88,
+    "lastVerified": "12 juillet 2026",
+    "image": "assets/products/coffre-auto.png"
+  },
+  {
+    "id": "lunch-3",
+    "name": "Lunch box à 3 compartiments",
+    "category": "cuisine",
+    "price": 18.5,
+    "material": "Polypropylène sans BPA",
+    "capacity": "1,2 litre",
+    "dimensions": "23 × 17 × 7 cm",
+    "cleaning": "Lave-vaisselle selon fabricant",
+    "use": "Repas préparé, travail, sortie",
+    "description": "Un contenant compartimenté pour séparer le plat, l’accompagnement et la collation.",
+    "tags": [
+      "moins20",
+      "lavable",
+      "repas"
+    ],
+    "badge": "Repas",
+    "strengths": [
+      "Trois zones séparées",
+      "Format sac à dos",
+      "Réutilisable"
+    ],
+    "limits": [
+      "Étanchéité à confirmer selon le modèle réel",
+      "Pas destiné aux aliments très liquides sans joint"
+    ],
+    "why": "Elle répond à un besoin simple : transporter un repas complet sans mélanger les aliments.",
+    "whoFor": [
+      "Repas au travail",
+      "Pique-niques",
+      "Préparation des portions"
+    ],
+    "notFor": [
+      "Soupes",
+      "Transport sans sac adapté"
+    ],
+    "score": 86,
+    "lastVerified": "12 juillet 2026",
+    "image": "assets/products/lunch-3.png"
+  },
+  {
+    "id": "trousse-rigide",
+    "name": "Trousse de voyage semi-rigide",
+    "category": "voyage",
+    "price": 19.9,
+    "material": "EVA moulé",
+    "capacity": "Format cabine",
+    "dimensions": "24 × 17 × 9 cm",
+    "cleaning": "Chiffon humide",
+    "use": "Câbles, accessoires, toilette",
+    "description": "Une petite coque semi-rigide pour protéger les accessoires de voyage et les câbles.",
+    "tags": [
+      "moins20",
+      "rigide",
+      "voyage"
+    ],
+    "badge": "Voyage",
+    "strengths": [
+      "Coque semi-rigide",
+      "Ouverture complète",
+      "Élastiques intérieurs"
+    ],
+    "limits": [
+      "Résiste aux chocs légers, pas à l’écrasement extrême",
+      "Taille à adapter au contenu"
+    ],
+    "why": "Elle protège mieux qu’une pochette souple tout en restant légère et facile à ranger.",
+    "whoFor": [
+      "Câbles et chargeurs",
+      "Petits accessoires",
+      "Voyage en cabine"
+    ],
+    "notFor": [
+      "Objets très volumineux",
+      "Matériel extrêmement fragile"
+    ],
+    "score": 84,
+    "lastVerified": "12 juillet 2026",
+    "image": "assets/products/trousse-rigide.png"
+  },
+  {
+    "id": "seau-pliable",
+    "name": "Seau pliable en silicone",
+    "category": "exterieur",
+    "price": 16.9,
+    "material": "Silicone et plastique",
+    "capacity": "10 litres",
+    "dimensions": "Ø 32 cm, plié 5 cm",
+    "cleaning": "Rinçage",
+    "use": "Camping, voiture, jardin",
+    "description": "Un seau compact qui se replie pour le rangement et se déploie au besoin.",
+    "tags": [
+      "moins20",
+      "pliable",
+      "lavable"
+    ],
+    "badge": "Gain de place",
+    "strengths": [
+      "Très compact une fois plié",
+      "Poignée de transport",
+      "Multi-usage"
+    ],
+    "limits": [
+      "Ne pas poser près d’une forte chaleur",
+      "Stabilité à vérifier sur sol irrégulier"
+    ],
+    "why": "Son faible encombrement le rend utile dans une voiture, une caravane ou un petit logement.",
+    "whoFor": [
+      "Camping",
+      "Nettoyage d’appoint",
+      "Jardinage"
+    ],
+    "notFor": [
+      "Eau très chaude",
+      "Charges non liquides lourdes"
+    ],
+    "score": 89,
+    "lastVerified": "12 juillet 2026",
+    "image": "assets/products/seau-pliable.png"
+  },
+  {
+    "id": "bac-frigo",
+    "name": "Bac transparent pour réfrigérateur",
+    "category": "cuisine",
+    "price": 11.9,
+    "material": "PET alimentaire",
+    "capacity": "4 litres",
+    "dimensions": "31 × 15 × 10 cm",
+    "cleaning": "Lavage manuel conseillé",
+    "use": "Réfrigérateur, garde-manger",
+    "description": "Un bac à poignée frontale pour regrouper les petits aliments et mieux voir les stocks.",
+    "tags": [
+      "moins20",
+      "transparent",
+      "empilable"
+    ],
+    "badge": "Organisation",
+    "strengths": [
+      "Contenu visible",
+      "Poignée frontale",
+      "Format rectangulaire"
+    ],
+    "limits": [
+      "Ne pas exposer à une forte chaleur",
+      "Empilage selon le modèle exact"
+    ],
+    "why": "Il simplifie le rangement et limite les petits produits oubliés au fond du réfrigérateur.",
+    "whoFor": [
+      "Réfrigérateurs chargés",
+      "Organisation par catégories",
+      "Petits emballages"
+    ],
+    "notFor": [
+      "Four ou micro-ondes",
+      "Aliments brûlants"
+    ],
+    "score": 80,
+    "lastVerified": "12 juillet 2026",
+    "image": "assets/products/bac-frigo.png"
+  },
+  {
+    "id": "poubelle-auto",
+    "name": "Mini-poubelle de voiture",
+    "category": "voiture",
+    "price": 9.9,
+    "material": "ABS",
+    "capacity": "1,5 litre",
+    "dimensions": "19 × 9 × 8 cm",
+    "cleaning": "Rinçage",
+    "use": "Portière, console, bureau",
+    "description": "Un petit contenant rigide pour garder papiers et emballages au même endroit.",
+    "tags": [
+      "moins10",
+      "lavable",
+      "voiture"
+    ],
+    "badge": "Moins de 10 €",
+    "strengths": [
+      "Petit format",
+      "Couvercle basculant",
+      "Facile à vider"
+    ],
+    "limits": [
+      "Capacité limitée",
+      "Compatibilité à vérifier avec la portière"
+    ],
+    "why": "C’est une solution simple pour éviter l’accumulation de tickets et petits emballages dans l’habitacle.",
+    "whoFor": [
+      "Trajets quotidiens",
+      "Voitures familiales",
+      "Bureau"
+    ],
+    "notFor": [
+      "Déchets liquides",
+      "Gros emballages"
+    ],
+    "score": 78,
+    "lastVerified": "12 juillet 2026",
+    "image": "assets/products/poubelle-auto.png"
+  },
+  {
+    "id": "panier-bain",
+    "name": "Panier de douche ajouré",
+    "category": "maison",
+    "price": 13.5,
+    "material": "Polypropylène",
+    "capacity": "Produits de toilette",
+    "dimensions": "29 × 18 × 18 cm",
+    "cleaning": "Rinçage",
+    "use": "Salle de bain, buanderie",
+    "description": "Un panier ajouré avec poignée pour transporter et faire sécher les produits.",
+    "tags": [
+      "moins20",
+      "lavable",
+      "maison"
+    ],
+    "badge": "Salle de bain",
+    "strengths": [
+      "Évacuation de l’eau",
+      "Poignée intégrée",
+      "Facile à nettoyer"
+    ],
+    "limits": [
+      "Ne remplace pas une fixation murale",
+      "Charge modérée"
+    ],
+    "why": "Il facilite le transport et le séchage des produits dans les salles de bain partagées.",
+    "whoFor": [
+      "Familles",
+      "Salles de bain partagées",
+      "Buanderie"
+    ],
+    "notFor": [
+      "Fixation permanente",
+      "Charges lourdes"
+    ],
+    "score": 81,
+    "lastVerified": "12 juillet 2026",
+    "image": "assets/products/panier-bain.png"
+  },
+  {
+    "id": "boite-cables",
+    "name": "Boîte de rangement pour câbles",
+    "category": "maison",
+    "price": 12.9,
+    "material": "ABS",
+    "capacity": "Multiprise et câbles",
+    "dimensions": "32 × 13 × 12 cm",
+    "cleaning": "Chiffon sec",
+    "use": "Bureau, salon",
+    "description": "Une boîte ventilée qui masque et regroupe une multiprise et ses câbles.",
+    "tags": [
+      "moins20",
+      "rigide",
+      "bureau"
+    ],
+    "badge": "Bureau",
+    "strengths": [
+      "Réduit le désordre visuel",
+      "Ouvertures latérales",
+      "Couvercle amovible"
+    ],
+    "limits": [
+      "Ventilation nécessaire",
+      "Ne pas couvrir un appareil qui chauffe fortement"
+    ],
+    "why": "Elle améliore l’ordre visuel tout en laissant les câbles accessibles.",
+    "whoFor": [
+      "Bureau à domicile",
+      "Salon",
+      "Coin recharge"
+    ],
+    "notFor": [
+      "Appareils très chauds",
+      "Multiprises surchargées"
+    ],
+    "score": 83,
+    "lastVerified": "12 juillet 2026",
+    "image": "assets/products/boite-cables.png"
+  },
+  {
+    "id": "gourde",
+    "name": "Gourde robuste 750 ml",
+    "category": "voyage",
+    "price": 17.9,
+    "material": "Tritan",
+    "capacity": "750 ml",
+    "dimensions": "25 × 8 cm",
+    "cleaning": "Lavage manuel",
+    "use": "Travail, voyage, extérieur",
+    "description": "Une gourde à poignée avec bouchon protégé pour un usage quotidien.",
+    "tags": [
+      "moins20",
+      "reutilisable",
+      "voyage"
+    ],
+    "badge": "Quotidien",
+    "strengths": [
+      "Bonne prise en main",
+      "Réutilisable",
+      "Format polyvalent"
+    ],
+    "limits": [
+      "Étanchéité dépend du joint réel",
+      "Ne pas confondre avec une bouteille isotherme"
+    ],
+    "why": "Son format convient à la plupart des sacs et facilite une utilisation quotidienne.",
+    "whoFor": [
+      "Travail",
+      "Sport léger",
+      "Voyage"
+    ],
+    "notFor": [
+      "Boissons chaudes",
+      "Maintien au froid longue durée"
+    ],
+    "score": 85,
+    "lastVerified": "12 juillet 2026",
+    "image": "assets/products/gourde.png"
+  },
+  {
+    "id": "caisse-pliable",
+    "name": "Caisse pliable multi-usage",
+    "category": "exterieur",
+    "price": 27.9,
+    "material": "Polypropylène renforcé",
+    "capacity": "32 litres",
+    "dimensions": "48 × 35 × 24 cm",
+    "cleaning": "Rinçage",
+    "use": "Courses, coffre, camping",
+    "description": "Une caisse qui se replie après usage pour prendre moins de place.",
+    "tags": [
+      "moins30",
+      "pliable",
+      "exterieur"
+    ],
+    "badge": "Multi-usage",
+    "strengths": [
+      "Grande capacité",
+      "Poignées",
+      "Se range à plat"
+    ],
+    "limits": [
+      "Charge maximale à vérifier selon fabricant",
+      "Attention aux doigts lors du pliage"
+    ],
+    "why": "Elle remplace plusieurs sacs et se fait discrète lorsqu’elle n’est pas utilisée.",
+    "whoFor": [
+      "Courses",
+      "Camping",
+      "Transport d’objets"
+    ],
+    "notFor": [
+      "Charges dépassant la limite fabricant",
+      "Enfants sans surveillance"
+    ],
+    "score": 90,
+    "lastVerified": "12 juillet 2026",
+    "image": "assets/products/caisse-pliable.png"
+  },
+  {
+    "id": "boite-etanche",
+    "name": "Boîte étanche pour petits objets",
+    "category": "exterieur",
+    "price": 15.9,
+    "material": "ABS avec joint silicone",
+    "capacity": "Téléphone et clés",
+    "dimensions": "20 × 11 × 6 cm",
+    "cleaning": "Rinçage puis séchage",
+    "use": "Plage, bateau, camping",
+    "description": "Une petite boîte rigide avec joint pour protéger des éclaboussures et de la poussière.",
+    "tags": [
+      "moins20",
+      "etanche",
+      "rigide"
+    ],
+    "badge": "Protection",
+    "strengths": [
+      "Joint périphérique",
+      "Coque rigide",
+      "Format compact"
+    ],
+    "limits": [
+      "Indice d’étanchéité réel à vérifier",
+      "Un test doit être fait avant immersion"
+    ],
+    "why": "Elle apporte une protection supplémentaire pour les petits objets exposés aux éclaboussures.",
+    "whoFor": [
+      "Plage",
+      "Camping",
+      "Activités extérieures"
+    ],
+    "notFor": [
+      "Plongée sans indice certifié",
+      "Objets trop volumineux"
+    ],
+    "score": 87,
+    "lastVerified": "12 juillet 2026",
+    "image": "assets/products/boite-etanche.png"
+  }
+]

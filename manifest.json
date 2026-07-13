@@ -1,10 +1,10 @@
 {
-  "id": "/",
+  "id": "./",
   "name": "Le Choix Costaud",
   "short_name": "Choix Costaud",
   "description": "Des objets utiles qui tiennent vraiment.",
-  "start_url": "/",
-  "scope": "/",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#F8F3EA",
   "theme_color": "#F3E8D8",
