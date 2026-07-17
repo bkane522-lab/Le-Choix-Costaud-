@@ -76,3 +76,13 @@ Le cache actuel est nommé `le-choix-costaud-public-v5-ikea` dans `sw.js`. Il fa
 - le bouton IKEA lance désormais une recherche Google ciblée avec « IKEA + nom du produit »
 - aucune restriction `site:` n’est utilisée, afin d’éviter les pages sans résultat
 - aucun changement de design, de navigation ou de contenu produit
+
+
+## Mentions légales et confidentialité
+
+- liens visibles en pied de page : Mentions légales, Confidentialité et À propos
+- éditeur et contact affichés
+- coordonnées officielles de l’hébergeur Vercel affichées
+- fonctionnement du stockage local expliqué
+- absence actuelle d’analytics, de publicité, de formulaire et de lien affilié indiquée
+- cache renouvelé : `le-choix-costaud-public-v6-legal`
