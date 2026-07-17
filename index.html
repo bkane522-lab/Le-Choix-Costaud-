@@ -3,51 +3,67 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#F3E8D8" />
-  <meta name="description" content="Le Choix Costaud — des objets pratiques, solides et sélectionnés pour durer dans la vraie vie." />
+  <meta name="theme-color" content="#123F3A" />
+  <meta name="description" content="Le Choix Costaud vous aide à choisir des objets pratiques et solides grâce à des critères simples à vérifier avant l’achat." />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="apple-mobile-web-app-title" content="Choix Costaud" />
-  <title>Le Choix Costaud</title>
-  <link rel="manifest" href="manifest.json?v=2.1" />
+  <meta property="og:title" content="Le Choix Costaud" />
+  <meta property="og:description" content="Achetez moins souvent. Choisissez plus solide." />
+  <meta property="og:type" content="website" />
+  <title>Le Choix Costaud — choisir plus solide</title>
+  <link rel="manifest" href="manifest.json" />
   <link rel="icon" href="icons/icon-192.png" type="image/png" />
   <link rel="apple-touch-icon" href="icons/icon-192.png" />
-  <link rel="stylesheet" href="style-v21.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="app-shell">
     <header class="topbar">
-      <button class="brand" data-view="home" aria-label="Retour à l'accueil">
-        <img src="icons/icon-192.png" alt="" class="brand-logo" />
+      <button class="brand" data-view="home" aria-label="Retour à l’accueil">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" role="img">
+            <path d="M32 5 53 13v17c0 13.5-8.2 23.8-21 29C19.2 53.8 11 43.5 11 30V13L32 5Z"/>
+            <path class="brand-box" d="M21 24h22v17H21z"/>
+            <path class="brand-line" d="M21 29h22M32 24v17"/>
+          </svg>
+        </span>
         <span class="brand-copy">
           <strong>Le Choix Costaud</strong>
-          <small>Des objets utiles qui tiennent vraiment</small>
+          <small>Le guide des objets qui durent</small>
         </span>
       </button>
-      <button class="icon-button" id="installBtn" aria-label="Installer l'application" title="Installer l'application">↓</button>
+
+      <div class="topbar-actions">
+        <button class="icon-button info-button" id="infoBtn" aria-label="Voir notre méthode" title="Notre méthode">i</button>
+        <button class="icon-button install-button" id="installBtn" hidden aria-label="Installer l’application" title="Installer l’application">
+          <span aria-hidden="true">↓</span>
+        </button>
+      </div>
     </header>
 
     <main>
       <section class="view active" id="view-home">
         <div class="hero">
-          <div class="hero-badge">Sélection indépendante</div>
-          <h1>Marre des objets qui cassent trop vite&nbsp;?</h1>
-          <p>Découvrez des objets pratiques, résistants et faciles à vivre pour la maison, la voiture et les voyages.</p>
+          <div class="hero-badge"><span></span> Guide pratique · sans commission</div>
+          <h1>Achetez moins souvent.<br />Choisissez plus solide.</h1>
+          <p>Répondez à quatre questions et obtenez trois pistes adaptées, avec les points précis à vérifier avant d’acheter.</p>
           <div class="hero-actions">
-            <button class="primary-button" data-view="explore">Voir les sélections</button>
-            <button class="secondary-button" data-view="quiz">Trouver selon mon besoin</button>
+            <button class="primary-button hero-primary" data-view="quiz">Trouver mon choix <span aria-hidden="true">→</span></button>
+            <button class="hero-link" data-view="explore">Explorer les 18 sélections</button>
           </div>
-          <div class="test-note">
-            <span aria-hidden="true">◌</span>
-            <span>Version de test sans lien rémunéré ni achat intégré.</span>
+          <div class="hero-proof" aria-label="Avantages">
+            <span><strong>1 min</strong> pour choisir</span>
+            <span><strong>3</strong> recommandations</span>
+            <span><strong>0</strong> inscription</span>
           </div>
         </div>
 
-        <section class="section-block">
+        <section class="section-block category-section">
           <div class="section-heading">
             <div>
-              <span class="eyebrow">Explorer</span>
-              <h2>Choisissez votre univers</h2>
+              <span class="eyebrow">Accès rapide</span>
+              <h2>Que cherchez-vous&nbsp;?</h2>
             </div>
           </div>
           <div class="category-grid" id="homeCategories"></div>
@@ -56,137 +72,184 @@
         <section class="section-block">
           <div class="section-heading">
             <div>
-              <span class="eyebrow">Guides pratiques</span>
-              <h2>Sélections éditoriales</h2>
+              <span class="eyebrow">Pour commencer</span>
+              <h2>Trois choix utiles</h2>
             </div>
+            <button class="text-button" data-view="explore">Tout voir</button>
           </div>
-          <div class="editorial-grid" id="editorialGrid"></div>
+          <div class="featured-list" id="featuredProducts"></div>
         </section>
 
-        <section class="section-block">
-          <div class="section-heading">
+        <section class="section-block method-card">
+          <div class="method-card-head">
+            <span class="method-shield" aria-hidden="true">✓</span>
             <div>
-              <span class="eyebrow">Sélection du moment</span>
-              <h2>Les petits costauds</h2>
-            </div>
-            <button class="text-button" data-view="explore" data-filter="budget">Voir tout</button>
-          </div>
-          <div class="horizontal-list" id="featuredProducts"></div>
-        </section>
-
-        <section class="section-block">
-          <div class="trust-card">
-            <div class="trust-icon">✓</div>
-            <div>
-              <h3>Ce que nous regardons</h3>
-              <p>Matière, capacité, entretien, usage réel et limites connues. Aucun produit n’est présenté comme « incassable » sans preuve.</p>
+              <span class="eyebrow">Notre méthode</span>
+              <h2>Simple à lire. Facile à vérifier.</h2>
             </div>
           </div>
+          <div class="method-steps">
+            <div><strong>1</strong><span>Le besoin réel</span></div>
+            <div><strong>2</strong><span>La matière à viser</span></div>
+            <div><strong>3</strong><span>Les pièges à éviter</span></div>
+          </div>
+          <button class="method-link" id="homeInfoBtn">Voir comment les choix sont construits →</button>
         </section>
       </section>
 
       <section class="view" id="view-explore">
-        <div class="page-head">
+        <div class="page-head compact-page-head">
           <div>
-            <span class="eyebrow">Catalogue test</span>
-            <h1>Explorer les produits</h1>
-            <p>Des produits de démonstration pour valider l’expérience avant l’ajout des offres marchandes.</p>
+            <span class="eyebrow">18 sélections pratiques</span>
+            <h1>Que cherchez-vous&nbsp;?</h1>
           </div>
         </div>
+
         <div class="sticky-tools">
           <label class="search-box">
-            <span aria-hidden="true">⌕</span>
-            <input id="searchInput" type="search" placeholder="Rechercher un usage, une matière..." autocomplete="off" />
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <input id="searchInput" type="search" placeholder="Ex. rangement, gourde, voiture…" autocomplete="off" />
           </label>
-          <div class="filter-row" id="categoryFilters"></div>
-          <div class="filter-row compact" id="tagFilters"></div>
+          <div class="filter-row" id="categoryFilters" aria-label="Catégories"></div>
+          <details class="filter-details">
+            <summary>Affiner la recherche</summary>
+            <div class="filter-row compact" id="tagFilters"></div>
+          </details>
         </div>
+
         <div class="result-head">
-          <strong id="resultCount">0 produit</strong>
-          <button class="sort-button" id="resetFilters">Réinitialiser</button>
+          <strong id="resultCount">0 choix</strong>
+          <button class="sort-button" id="resetFilters">Effacer les filtres</button>
         </div>
+
         <div class="product-grid" id="productGrid"></div>
       </section>
 
       <section class="view" id="view-quiz">
         <div class="page-head quiz-page-head">
+          <button class="back-button quiz-close" data-view="home">← Accueil</button>
           <div>
-            <span class="eyebrow">Assistant de choix</span>
-            <h1>Trouvez le bon produit</h1>
-            <p>Six questions rapides pour obtenir trois suggestions adaptées.</p>
+            <span class="eyebrow">Votre besoin en 1 minute</span>
+            <h1>Trouvons le bon choix</h1>
+            <p>Quatre réponses suffisent. Aucune inscription.</p>
           </div>
         </div>
+
         <div class="quiz-card">
-          <div class="quiz-progress"><div class="quiz-progress-bar" id="quizProgress"></div></div>
+          <div class="quiz-progress" aria-hidden="true">
+            <div class="quiz-progress-bar" id="quizProgress"></div>
+          </div>
           <div id="quizContent"></div>
         </div>
       </section>
 
       <section class="view" id="view-favorites">
-        <div class="page-head">
+        <div class="page-head compact-page-head">
           <div>
             <span class="eyebrow">Votre sélection</span>
-            <h1>Favoris</h1>
-            <p>Gardez de côté les produits que vous souhaitez revoir.</p>
+            <h1>Vos favoris</h1>
+            <p>Retrouvez les choix que vous souhaitez comparer plus tard.</p>
           </div>
         </div>
         <div class="empty-state" id="favoritesEmpty">
-          <div>♡</div><h2>Aucun favori pour le moment</h2>
-          <p>Ajoutez des produits depuis les sélections.</p>
-          <button class="primary-button" data-view="explore">Explorer</button>
+          <div class="empty-icon">♡</div>
+          <h2>Rien d’enregistré</h2>
+          <p>Appuyez sur le cœur d’une sélection pour la garder ici.</p>
+          <button class="primary-button" data-view="explore">Explorer les sélections</button>
         </div>
         <div class="product-grid" id="favoritesGrid"></div>
       </section>
 
       <section class="view" id="view-compare">
-        <div class="page-head">
+        <div class="page-head compact-page-head">
           <div>
-            <span class="eyebrow">Comparateur</span>
-            <h1>Comparer</h1>
-            <p>Sélectionnez jusqu’à trois produits.</p>
+            <span class="eyebrow">Jusqu’à trois choix</span>
+            <h1>Comparer simplement</h1>
+            <p>Les critères importants sont placés côte à côte.</p>
           </div>
         </div>
+
         <div class="compare-empty" id="compareEmpty">
-          <div>⇄</div><h2>Rien à comparer</h2>
-          <p>Utilisez le bouton « Comparer » sur une fiche produit.</p>
-          <button class="primary-button" data-view="explore">Choisir des produits</button>
+          <div class="empty-icon">⇄</div>
+          <h2>Aucun choix à comparer</h2>
+          <p>Ouvrez une fiche puis appuyez sur « Ajouter au comparateur ».</p>
+          <button class="primary-button" data-view="explore">Choisir un produit</button>
         </div>
         <div class="compare-wrap" id="compareWrap"></div>
       </section>
 
       <section class="view" id="view-product">
-        <div class="product-back-bar">
-          <button class="back-button" id="productBack">← Retour</button>
-        </div>
+        <button class="back-button product-back" id="productBack">← Retour</button>
         <div id="productDetail"></div>
       </section>
     </main>
 
+    <button class="compare-tray" id="compareTray" data-view="compare" hidden>
+      <span><strong id="compareCount">0</strong> choix à comparer</span>
+      <span>Comparer →</span>
+    </button>
+
     <nav class="bottom-nav" aria-label="Navigation principale">
-      <button class="nav-item active" data-view="home"><span>⌂</span><small>Accueil</small></button>
-      <button class="nav-item" data-view="explore"><span>▦</span><small>Explorer</small></button>
-      <button class="nav-item" data-view="quiz"><span>◇</span><small>Trouver</small></button>
-      <button class="nav-item" data-view="favorites"><span>♡</span><small>Favoris</small></button>
-      <button class="nav-item" data-view="compare"><span>⇄</span><small>Comparer</small><span class="nav-count" id="compareCount" hidden>0</span></button>
+      <button class="nav-item active" data-view="home">
+        <span class="nav-icon" aria-hidden="true">⌂</span>
+        <small>Accueil</small>
+      </button>
+      <button class="nav-item" data-view="explore">
+        <span class="nav-icon" aria-hidden="true">▦</span>
+        <small>Explorer</small>
+      </button>
+      <button class="nav-item" data-view="favorites">
+        <span class="nav-icon" aria-hidden="true">♡</span>
+        <small>Favoris</small>
+      </button>
     </nav>
   </div>
 
-  <div class="install-help" id="installHelp" hidden>
-    <div class="install-help-panel" role="dialog" aria-modal="true" aria-labelledby="installHelpTitle">
-      <button class="install-help-close" id="installHelpClose" aria-label="Fermer">×</button>
-      <div class="install-help-icon">↓</div>
+  <div class="modal-layer" id="buyModal" hidden>
+    <div class="modal-panel shop-panel" role="dialog" aria-modal="true" aria-labelledby="buyModalTitle">
+      <button class="modal-close" data-close-modal="buyModal" aria-label="Fermer">×</button>
+      <div class="modal-icon">⌕</div>
+      <span class="eyebrow">Rechercher un modèle</span>
+      <h2 id="buyModalTitle">Où chercher ce produit&nbsp;?</h2>
+      <p id="buyModalText"></p>
+      <div class="merchant-grid" id="merchantGrid"></div>
+      <button class="secondary-button modal-wide-button" id="copyProductName">Copier la recherche</button>
+      <p class="modal-disclaimer">Ces boutons ouvrent une recherche externe. Les prix, stocks, dimensions et garanties doivent être vérifiés auprès du vendeur.</p>
+    </div>
+  </div>
+
+  <div class="modal-layer" id="infoModal" hidden>
+    <div class="modal-panel info-panel" role="dialog" aria-modal="true" aria-labelledby="infoModalTitle">
+      <button class="modal-close" data-close-modal="infoModal" aria-label="Fermer">×</button>
+      <div class="modal-icon">✓</div>
+      <span class="eyebrow">Notre méthode</span>
+      <h2 id="infoModalTitle">Choisir sans compliquer</h2>
+      <div class="method-list">
+        <div><strong>1. Partir de l’usage</strong><span>Un objet doit résoudre un problème concret avant d’ajouter des fonctions.</span></div>
+        <div><strong>2. Regarder la construction</strong><span>Matière, assemblage, entretien et pièces remplaçables comptent plus que le discours marketing.</span></div>
+        <div><strong>3. Montrer les limites</strong><span>Chaque fiche indique clairement ce qu’il faut vérifier et ce qu’il vaut mieux éviter.</span></div>
+        <div><strong>4. Comparer avant d’acheter</strong><span>Le guide ne vend aucun produit et ne garantit aucun modèle précis.</span></div>
+      </div>
+      <p class="modal-disclaimer">Les contenus sont informatifs. Les caractéristiques, normes, garanties et conditions du fabricant ou du vendeur restent la référence.</p>
+      <button class="primary-button modal-wide-button" data-close-modal="infoModal">Fermer</button>
+    </div>
+  </div>
+
+  <div class="modal-layer" id="installHelp" hidden>
+    <div class="modal-panel install-help-panel" role="dialog" aria-modal="true" aria-labelledby="installHelpTitle">
+      <button class="modal-close" id="installHelpClose" aria-label="Fermer">×</button>
+      <div class="modal-icon">↓</div>
       <h2 id="installHelpTitle">Installer l’application</h2>
-      <p>Le navigateur n’autorise pas l’ouverture automatique de l’installation.</p>
-      <ol>
-        <li>Fermez ce message.</li>
-        <li>Appuyez sur le bouton <strong>menu ≡ en bas à droite</strong>.</li>
-        <li>Choisissez <strong>Installer l’application</strong>, <strong>Ajouter au téléphone</strong> ou <strong>Ajouter à l’écran d’accueil</strong>.</li>
+      <p id="installHelpIntro">Le bouton automatique n’est pas disponible dans ce navigateur.</p>
+      <ol id="installSteps">
+        <li>Ouvrez le menu du navigateur.</li>
+        <li>Choisissez <strong>Installer l’application</strong> ou <strong>Ajouter à l’écran d’accueil</strong>.</li>
       </ol>
-      <button class="primary-button install-help-ok" id="installHelpOk">J’ai compris</button>
+      <button class="primary-button modal-wide-button" id="installHelpOk">J’ai compris</button>
     </div>
   </div>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <script src="app-v21.js" defer></script>
+  <script src="app.js" defer></script>
 </body>
 </html>

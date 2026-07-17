@@ -1,18 +1,61 @@
-# Le Choix Costaud — V2.1 corrective
+# Le Choix Costaud — édition publique UX/UI
 
-## Corrections
-- Comparateur transformé en cartes lisibles sur téléphone.
-- Tableau comparatif conservé uniquement sur tablette et ordinateur.
-- Textes longs protégés contre les coupures.
-- Bouton « Voir la fiche complète » depuis chaque comparaison.
-- Tous les fichiers principaux ont changé de nom afin d’éviter le mélange avec l’ancien cache.
-- Service worker V2.1 avec mise à jour forcée.
-- Instructions d’installation adaptées au menu ≡ situé en bas à droite du navigateur.
+PWA mobile-first prête à être publiée comme guide d’achat indépendant.
 
-## Déploiement
-Supprimez les anciens fichiers du projet, ajoutez tout le contenu de cette archive, puis redéployez.
+## Expérience utilisateur
 
-Après le déploiement :
-1. fermez complètement l’onglet ;
-2. rouvrez l’adresse ;
-3. laissez la page se recharger une fois automatiquement si nécessaire.
+- un objectif principal dès l’accueil : trouver un choix adapté en moins d’une minute
+- questionnaire réduit à 4 questions
+- 3 recommandations dans l’univers choisi
+- navigation principale limitée à 3 entrées : Accueil, Explorer et Favoris
+- comparateur visible uniquement lorsqu’un produit y est ajouté
+- écrans Questionnaire et Fiche produit sans barre de navigation pour éviter les distractions
+- cartes compactes, informations essentielles lisibles immédiatement et boutons adaptés au tactile
+- illustrations vectorielles cohérentes, sans dépendance externe
+
+## Contenu
+
+- 6 univers : Maison, Voiture, Camping, Bricolage, Cuisine et Sport
+- 18 fiches pratiques, soit 3 choix par univers
+- recherche par mot-clé, catégories et filtres secondaires
+- favoris enregistrés sur le téléphone
+- comparateur jusqu’à 3 choix
+- partage direct des fiches
+- recherches multi-enseignes sans lien affilié
+- installation sur l’écran d’accueil
+- fonctionnement hors ligne après une première ouverture
+
+## Positionnement transparent
+
+Les fiches décrivent des types de produits et les critères à vérifier avant de choisir un modèle précis. Les budgets sont indicatifs. L’application ne vend aucun produit, ne garantit ni les prix ni les stocks et ne reçoit aucune commission dans cette édition.
+
+## Mise en ligne sur Vercel
+
+1. Créer un nouveau projet Vercel.
+2. Importer le dossier complet ou le dépôt GitHub contenant ces fichiers.
+3. Ne sélectionner aucun framework.
+4. Laisser la commande de build vide, puis déployer.
+
+Tous les fichiers doivent rester ensemble à la racine :
+
+- `index.html`
+- `style.css`
+- `app.js`
+- `manifest.json`
+- `sw.js`
+- dossier `icons`
+
+Le cache actuel est nommé `le-choix-costaud-public-v3-ux` dans `sw.js`. Il faudra modifier ce nom lors d’une prochaine mise à jour importante pour forcer le rafraîchissement sur les appareils déjà installés.
+
+## Vérifications réalisées
+
+- syntaxe JavaScript et service worker valides
+- manifeste JSON valide
+- tests sans erreur de console sur 320 × 720, 390 × 844, 768 × 900 et 1280 × 900
+- aucune largeur de page dépassant l’écran sur les vues principales
+- 6 catégories et 18 fiches fonctionnelles
+- chaque fiche affiche 4 informations clés et 4 blocs de contrôle
+- recherche, filtres et réinitialisation fonctionnels
+- favoris et comparateur fonctionnels, limité à 3 choix
+- questionnaire complet : chaque univers renvoie bien ses 3 recommandations
+- fenêtres d’information, d’installation et de recherche marchande fonctionnelles
