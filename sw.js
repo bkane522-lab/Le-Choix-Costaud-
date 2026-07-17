@@ -1,4 +1,4 @@
-const CACHE_NAME = "le-choix-costaud-public-v5-ikea";
+const CACHE_NAME = "le-choix-costaud-public-v6-legal";
 const APP_ASSETS = [
   "./",
   "./index.html",

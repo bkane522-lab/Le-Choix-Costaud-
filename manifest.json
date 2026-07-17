@@ -2,7 +2,7 @@
   "id": "./",
   "name": "Le Choix Costaud",
   "short_name": "Choix Costaud",
-  "description": "Un guide simple pour choisir des objets pratiques, solides et faciles à entretenir.",
+  "description": "Achetez moins souvent. Choisissez plus solide.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
@@ -10,7 +10,6 @@
   "theme_color": "#123F3A",
   "lang": "fr",
   "orientation": "portrait-primary",
-  "categories": ["shopping", "lifestyle", "utilities"],
   "icons": [
     {
       "src": "icons/icon-192.png",
@@ -29,20 +28,6 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
-    }
-  ],
-  "shortcuts": [
-    {
-      "name": "Explorer les sélections",
-      "short_name": "Explorer",
-      "url": "./#explore",
-      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
-    },
-    {
-      "name": "Trouver selon mon besoin",
-      "short_name": "Trouver",
-      "url": "./#quiz",
-      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
     }
   ]
 }

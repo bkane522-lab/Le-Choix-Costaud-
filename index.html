@@ -182,6 +182,15 @@
         <button class="back-button product-back" id="productBack">← Retour</button>
         <div id="productDetail"></div>
       </section>
+
+      <footer class="app-footer" aria-label="Informations légales">
+        <div class="footer-links">
+          <button type="button" data-legal-target="legal">Mentions légales</button>
+          <button type="button" data-legal-target="privacy">Confidentialité</button>
+          <button type="button" data-legal-target="about">À propos</button>
+        </div>
+        <p>© <span id="currentYear">2026</span> Le Choix Costaud · Guide indépendant non monétisé</p>
+      </footer>
     </main>
 
     <button class="compare-tray" id="compareTray" data-view="compare" hidden>
@@ -235,6 +244,74 @@
     </div>
   </div>
 
+
+
+  <div class="modal-layer" id="legalModal" hidden>
+    <div class="modal-panel legal-panel" role="dialog" aria-modal="true" aria-labelledby="legalModalTitle">
+      <button class="modal-close" data-close-modal="legalModal" aria-label="Fermer">×</button>
+      <div class="modal-icon">§</div>
+      <span class="eyebrow">Informations publiques</span>
+      <h2 id="legalModalTitle">Le Choix Costaud</h2>
+
+      <div class="legal-tabs" role="tablist" aria-label="Rubriques légales">
+        <button type="button" class="active" data-legal-tab="legal" role="tab">Mentions légales</button>
+        <button type="button" data-legal-tab="privacy" role="tab">Confidentialité</button>
+        <button type="button" data-legal-tab="about" role="tab">À propos</button>
+      </div>
+
+      <div class="legal-content">
+        <section class="legal-section active" data-legal-panel="legal">
+          <h3>Mentions légales</h3>
+          <dl class="legal-details">
+            <div><dt>Éditeur</dt><dd>Ahmadou Bamba KANE — édition non professionnelle, projet indépendant actuellement non monétisé.</dd></div>
+            <div><dt>Directeur de la publication</dt><dd>Ahmadou Bamba KANE.</dd></div>
+            <div><dt>Contact</dt><dd><a href="mailto:bamba26@hotmail.fr">bamba26@hotmail.fr</a> — contact par e-mail.</dd></div>
+            <div><dt>Hébergement</dt><dd>Vercel Inc., 440 N Barranca Avenue #4133, Covina, CA 91723, États-Unis — téléphone : +1 559 288 7060.</dd></div>
+          </dl>
+
+          <h3>Nature du service</h3>
+          <p>Le Choix Costaud est un guide d’aide au choix. L’application ne vend aucun produit, ne réalise aucune transaction et ne reçoit actuellement aucune commission.</p>
+
+          <h3>Liens externes et responsabilité</h3>
+          <p>Les boutons marchands ouvrent des recherches sur des sites tiers. Les prix, stocks, caractéristiques, normes, garanties et conditions de vente doivent être vérifiés directement auprès du vendeur ou du fabricant. Les marques citées restent la propriété de leurs titulaires respectifs.</p>
+
+          <h3>Propriété intellectuelle</h3>
+          <p>La marque, l’interface, les textes et les sélections éditoriales de Le Choix Costaud ne peuvent pas être reproduits ou réutilisés intégralement sans autorisation préalable, hors usages autorisés par la loi.</p>
+        </section>
+
+        <section class="legal-section" data-legal-panel="privacy">
+          <h3>Confidentialité</h3>
+          <p>L’application ne demande aucun compte et ne comporte aucun formulaire de collecte. Aucun outil publicitaire ni outil d’analyse d’audience n’est intégré dans cette version.</p>
+
+          <h3>Données enregistrées sur l’appareil</h3>
+          <p>Les favoris et les produits placés dans le comparateur sont enregistrés uniquement dans le stockage local du navigateur. Ils restent sur l’appareil utilisé et peuvent être supprimés en effaçant les données du site ou du navigateur.</p>
+
+          <h3>Données techniques d’hébergement</h3>
+          <p>Comme tout service en ligne, l’hébergeur peut traiter des données techniques nécessaires à la sécurité et au fonctionnement du service, notamment l’adresse IP et les journaux de connexion, conformément à sa propre politique de confidentialité.</p>
+
+          <h3>Sites marchands externes</h3>
+          <p>Lorsque vous ouvrez une recherche marchande, vous quittez Le Choix Costaud. Le site tiers applique alors ses propres règles de confidentialité, de cookies et de traitement des données.</p>
+
+          <h3>Exercer vos droits</h3>
+          <p>Pour toute question relative aux informations publiées par Le Choix Costaud, écrivez à <a href="mailto:bamba26@hotmail.fr">bamba26@hotmail.fr</a>. Vous pouvez également déposer une réclamation auprès de la CNIL lorsque la réglementation le prévoit.</p>
+        </section>
+
+        <section class="legal-section" data-legal-panel="about">
+          <h3>À propos</h3>
+          <p>Le Choix Costaud aide à repérer les critères concrets d’un objet pratique et durable : usage réel, matière, assemblage, entretien et limites à vérifier.</p>
+
+          <h3>Indépendance</h3>
+          <p>Cette édition est gratuite, sans inscription, sans publicité intégrée et sans lien affilié. Une éventuelle future monétisation sera signalée clairement et les informations légales seront mises à jour avant son activation.</p>
+
+          <h3>Mise à jour</h3>
+          <p>Dernière mise à jour de ces informations : 17 juillet 2026.</p>
+        </section>
+      </div>
+
+      <button class="primary-button modal-wide-button" data-close-modal="legalModal">Fermer</button>
+    </div>
+  </div>
+
   <div class="modal-layer" id="installHelp" hidden>
     <div class="modal-panel install-help-panel" role="dialog" aria-modal="true" aria-labelledby="installHelpTitle">
       <button class="modal-close" id="installHelpClose" aria-label="Fermer">×</button>
@@ -250,6 +327,6 @@
   </div>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <script src="app.js?v=4" defer></script>
+  <script src="app.js?v=5" defer></script>
 </body>
 </html>
