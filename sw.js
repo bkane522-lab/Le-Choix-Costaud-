@@ -1,4 +1,4 @@
-const CACHE_NAME = "le-choix-costaud-public-v3-ux";
+const CACHE_NAME = "le-choix-costaud-public-v4-search";
 const APP_ASSETS = [
   "./",
   "./index.html",

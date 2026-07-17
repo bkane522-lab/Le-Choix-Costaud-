@@ -21,7 +21,7 @@ PWA mobile-first prête à être publiée comme guide d’achat indépendant.
 - favoris enregistrés sur le téléphone
 - comparateur jusqu’à 3 choix
 - partage direct des fiches
-- recherches multi-enseignes sans lien affilié
+- recherches directes sur les sites des enseignes, sans lien affilié
 - installation sur l’écran d’accueil
 - fonctionnement hors ligne après une première ouverture
 
@@ -45,7 +45,7 @@ Tous les fichiers doivent rester ensemble à la racine :
 - `sw.js`
 - dossier `icons`
 
-Le cache actuel est nommé `le-choix-costaud-public-v3-ux` dans `sw.js`. Il faudra modifier ce nom lors d’une prochaine mise à jour importante pour forcer le rafraîchissement sur les appareils déjà installés.
+Le cache actuel est nommé `le-choix-costaud-public-v4-search` dans `sw.js`. Il faudra modifier ce nom lors d’une prochaine mise à jour importante pour forcer le rafraîchissement sur les appareils déjà installés.
 
 ## Vérifications réalisées
 
@@ -59,3 +59,12 @@ Le cache actuel est nommé `le-choix-costaud-public-v3-ux` dans `sw.js`. Il faud
 - favoris et comparateur fonctionnels, limité à 3 choix
 - questionnaire complet : chaque univers renvoie bien ses 3 recommandations
 - fenêtres d’information, d’installation et de recherche marchande fonctionnelles
+
+
+## Correctif recherche marchande
+
+- suppression des recherches Google trop longues avec `site:`
+- ouverture directe du moteur de recherche de chaque enseigne
+- mots-clés raccourcis pour obtenir davantage de résultats utiles
+- enseignes adaptées à chaque produit ; par exemple, le panier de douche ne renvoie plus vers IKEA
+- aucun changement de design ou de parcours utilisateur

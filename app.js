@@ -406,27 +406,110 @@ const products = [
   }
 ];
 
+const productShopQueries = {
+  "boite-empilable": "boîte rangement 15 L",
+  "panier-douche": "panier douche",
+  "cache-cables": "boîte cache câbles",
+  "organiseur-coffre": "organiseur coffre voiture",
+  "poubelle-voiture": "poubelle voiture",
+  "compresseur-12v": "compresseur 12 V",
+  "seau-pliable": "seau pliable 10 L",
+  "caisse-pliable": "caisse pliable 30 L",
+  "lampe-camping": "lampe camping rechargeable",
+  "tournevis-embouts": "tournevis cliquet embouts",
+  "boite-outils": "boîte à outils compacte",
+  "metre-ruban": "mètre ruban 5 m",
+  "lunch-box": "lunch box compartimentée",
+  "bac-frigo": "bac rangement frigo",
+  "bocal-verre": "bocal verre hermétique",
+  "gourde-robuste": "gourde sport 750 ml",
+  "serviette-microfibre": "serviette microfibre sport",
+  "sac-sport": "sac sport chaussures"
+};
+
+function slugifySearch(value) {
+  return value
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
 const merchantDirectory = {
-  amazon: { label: "Amazon", domain: "amazon.fr", icon: "A" },
-  cdiscount: { label: "Cdiscount", domain: "cdiscount.com", icon: "C" },
-  ikea: { label: "IKEA", domain: "ikea.com/fr/fr", icon: "I" },
-  leroymerlin: { label: "Leroy Merlin", domain: "leroymerlin.fr", icon: "L" },
-  castorama: { label: "Castorama", domain: "castorama.fr", icon: "C" },
-  manomano: { label: "ManoMano", domain: "manomano.fr", icon: "M" },
-  decathlon: { label: "Decathlon", domain: "decathlon.fr", icon: "D" },
-  intersport: { label: "Intersport", domain: "intersport.fr", icon: "I" },
-  norauto: { label: "Norauto", domain: "norauto.fr", icon: "N" },
-  feuvert: { label: "Feu Vert", domain: "feuvert.fr", icon: "F" }
+  amazon: {
+    label: "Amazon",
+    icon: "A",
+    buildUrl: query => `https://www.amazon.fr/s?k=${encodeURIComponent(query)}`
+  },
+  cdiscount: {
+    label: "Cdiscount",
+    icon: "C",
+    buildUrl: query => `https://www.cdiscount.com/search/10/${slugifySearch(query)}.html`
+  },
+  ikea: {
+    label: "IKEA",
+    icon: "I",
+    buildUrl: query => `https://www.ikea.com/fr/fr/search/?q=${encodeURIComponent(query)}`
+  },
+  leroymerlin: {
+    label: "Leroy Merlin",
+    icon: "L",
+    buildUrl: query => `https://www.leroymerlin.fr/recherche/?q=${encodeURIComponent(query)}`
+  },
+  castorama: {
+    label: "Castorama",
+    icon: "C",
+    buildUrl: query => `https://www.castorama.fr/search?term=${encodeURIComponent(query)}`
+  },
+  manomano: {
+    label: "ManoMano",
+    icon: "M",
+    buildUrl: query => `https://www.manomano.fr/q/${slugifySearch(query)}`
+  },
+  decathlon: {
+    label: "Decathlon",
+    icon: "D",
+    buildUrl: query => `https://www.decathlon.fr/search?Ntt=${encodeURIComponent(query)}`
+  },
+  intersport: {
+    label: "Intersport",
+    icon: "I",
+    buildUrl: query => `https://www.intersport.fr/recherche/?q=${encodeURIComponent(query)}`
+  },
+  norauto: {
+    label: "Norauto",
+    icon: "N",
+    buildUrl: query => `https://www.norauto.fr/recherche.html?query=${encodeURIComponent(query)}`
+  },
+  feuvert: {
+    label: "Feu Vert",
+    icon: "F",
+    buildUrl: query => `https://www.feuvert.fr/recherche?text=${encodeURIComponent(query)}`
+  }
 };
 
 const categoryMerchants = {
-  maison: ["ikea", "leroymerlin", "amazon", "cdiscount"],
+  maison: ["leroymerlin", "castorama", "amazon", "cdiscount"],
   voiture: ["norauto", "feuvert", "amazon", "cdiscount"],
   camping: ["decathlon", "manomano", "amazon", "cdiscount"],
   bricolage: ["leroymerlin", "castorama", "manomano", "amazon"],
-  cuisine: ["ikea", "amazon", "cdiscount", "leroymerlin"],
+  cuisine: ["ikea", "amazon", "cdiscount", "manomano"],
   sport: ["decathlon", "intersport", "amazon", "cdiscount"]
 };
+
+const productMerchantOverrides = {
+  "boite-empilable": ["ikea", "leroymerlin", "amazon", "cdiscount"],
+  "panier-douche": ["leroymerlin", "castorama", "manomano", "amazon"],
+  "cache-cables": ["leroymerlin", "castorama", "amazon", "cdiscount"],
+  "lunch-box": ["ikea", "amazon", "cdiscount", "manomano"],
+  "bac-frigo": ["ikea", "amazon", "cdiscount", "manomano"],
+  "bocal-verre": ["ikea", "amazon", "cdiscount", "manomano"]
+};
+
+function shoppingQuery(product) {
+  return productShopQueries[product.id] || product.shortName || product.name;
+}
 
 function storedSet(key) {
   try {
@@ -864,26 +947,24 @@ function showProduct(id, navigateToProduct = true, syncHash = true) {
   if (navigateToProduct) navigate("product", {}, syncHash);
 }
 
-function siteSearchUrl(domain, query) {
-  return `https://www.google.com/search?q=${encodeURIComponent(`${query} site:${domain}`)}`;
-}
-
 function openBuyModal(id) {
   const product = products.find(item => item.id === id);
   if (!product) return;
   state.buyProductId = id;
+  const query = shoppingQuery(product);
   $("#buyModalTitle").textContent = product.shortName;
-  $("#buyModalText").textContent = `Comparez les caractéristiques réelles avec notre fiche avant de choisir un modèle.`;
+  $("#buyModalText").textContent = `Ouvrez directement la recherche du vendeur, puis comparez le modèle avec notre fiche.`;
   const grid = $("#merchantGrid");
   grid.innerHTML = "";
-  categoryMerchants[product.category].forEach(key => {
+  const merchants = productMerchantOverrides[product.id] || categoryMerchants[product.category];
+  merchants.forEach(key => {
     const merchant = merchantDirectory[key];
     const link = document.createElement("a");
     link.className = "merchant-link";
-    link.href = siteSearchUrl(merchant.domain, product.searchTerm);
+    link.href = merchant.buildUrl(query);
     link.target = "_blank";
     link.rel = "noopener noreferrer nofollow";
-    link.innerHTML = `<span>${merchant.icon}</span><strong>Chercher chez ${merchant.label}</strong><small>Recherche externe ↗</small>`;
+    link.innerHTML = `<span>${merchant.icon}</span><strong>Chercher chez ${merchant.label}</strong><small>Recherche sur le site ↗</small>`;
     grid.appendChild(link);
   });
   openModal("buyModal");
@@ -893,11 +974,11 @@ async function copyProductName() {
   const product = products.find(item => item.id === state.buyProductId);
   if (!product) return;
   try {
-    await navigator.clipboard.writeText(product.searchTerm);
+    await navigator.clipboard.writeText(shoppingQuery(product));
     showToast("Nom copié");
   } catch {
     const textarea = document.createElement("textarea");
-    textarea.value = product.searchTerm;
+    textarea.value = shoppingQuery(product);
     document.body.appendChild(textarea);
     textarea.select();
     document.execCommand("copy");
