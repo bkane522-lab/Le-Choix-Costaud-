@@ -450,7 +450,8 @@ const merchantDirectory = {
   ikea: {
     label: "IKEA",
     icon: "I",
-    buildUrl: query => `https://www.ikea.com/fr/fr/search/?q=${encodeURIComponent(query)}`
+    searchNote: "Recherche Google ciblée ↗",
+    buildUrl: query => `https://www.google.com/search?q=${encodeURIComponent(`IKEA ${query}`)}`
   },
   leroymerlin: {
     label: "Leroy Merlin",
@@ -964,7 +965,7 @@ function openBuyModal(id) {
     link.href = merchant.buildUrl(query);
     link.target = "_blank";
     link.rel = "noopener noreferrer nofollow";
-    link.innerHTML = `<span>${merchant.icon}</span><strong>Chercher chez ${merchant.label}</strong><small>Recherche sur le site ↗</small>`;
+    link.innerHTML = `<span>${merchant.icon}</span><strong>Chercher chez ${merchant.label}</strong><small>${merchant.searchNote || "Recherche sur le site ↗"}</small>`;
     grid.appendChild(link);
   });
   openModal("buyModal");

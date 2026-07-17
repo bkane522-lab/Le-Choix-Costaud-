@@ -45,7 +45,7 @@ Tous les fichiers doivent rester ensemble à la racine :
 - `sw.js`
 - dossier `icons`
 
-Le cache actuel est nommé `le-choix-costaud-public-v4-search` dans `sw.js`. Il faudra modifier ce nom lors d’une prochaine mise à jour importante pour forcer le rafraîchissement sur les appareils déjà installés.
+Le cache actuel est nommé `le-choix-costaud-public-v5-ikea` dans `sw.js`. Il faudra modifier ce nom lors d’une prochaine mise à jour importante pour forcer le rafraîchissement sur les appareils déjà installés.
 
 ## Vérifications réalisées
 
@@ -68,3 +68,11 @@ Le cache actuel est nommé `le-choix-costaud-public-v4-search` dans `sw.js`. Il 
 - mots-clés raccourcis pour obtenir davantage de résultats utiles
 - enseignes adaptées à chaque produit ; par exemple, le panier de douche ne renvoie plus vers IKEA
 - aucun changement de design ou de parcours utilisateur
+
+
+## Correctif IKEA
+
+- les recherches des autres enseignes restent inchangées
+- le bouton IKEA lance désormais une recherche Google ciblée avec « IKEA + nom du produit »
+- aucune restriction `site:` n’est utilisée, afin d’éviter les pages sans résultat
+- aucun changement de design, de navigation ou de contenu produit
