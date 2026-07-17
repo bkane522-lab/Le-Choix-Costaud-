@@ -1071,25 +1071,6 @@ function closeModal(id) {
   if ($$(".modal-layer:not([hidden])").length === 0) document.body.style.overflow = "";
 }
 
-
-
-function showLegalSection(section = "legal") {
-  const target = ["legal", "privacy", "about"].includes(section) ? section : "legal";
-  $$('[data-legal-tab]').forEach(button => {
-    const active = button.dataset.legalTab === target;
-    button.classList.toggle("active", active);
-    button.setAttribute("aria-selected", String(active));
-  });
-  $$('[data-legal-panel]').forEach(panel => panel.classList.toggle("active", panel.dataset.legalPanel === target));
-  const content = $("#legalModal .legal-content");
-  if (content) content.scrollTop = 0;
-}
-
-function openLegalModal(section = "legal") {
-  showLegalSection(section);
-  openModal("legalModal");
-}
-
 function bindNavigation() {
   $$("[data-view]").forEach(button => button.addEventListener("click", () => navigate(button.dataset.view, { filter: button.dataset.filter })));
   $("#searchInput").addEventListener("input", event => {
@@ -1107,8 +1088,6 @@ function bindNavigation() {
   $("#productBack").addEventListener("click", () => navigate(state.previousView || "explore"));
   $("#infoBtn").addEventListener("click", () => openModal("infoModal"));
   $("#homeInfoBtn").addEventListener("click", () => openModal("infoModal"));
-  $$('[data-legal-target]').forEach(button => button.addEventListener("click", () => openLegalModal(button.dataset.legalTarget)));
-  $$('[data-legal-tab]').forEach(button => button.addEventListener("click", () => showLegalSection(button.dataset.legalTab)));
   $("#copyProductName").addEventListener("click", copyProductName);
   $$("[data-close-modal]").forEach(button => button.addEventListener("click", () => closeModal(button.dataset.closeModal)));
   $$(".modal-layer").forEach(layer => layer.addEventListener("click", event => {
@@ -1196,5 +1175,4 @@ renderQuiz();
 updateCompareCount();
 bindNavigation();
 refreshInstallButton();
-$("#currentYear").textContent = new Date().getFullYear();
 routeFromHash();
